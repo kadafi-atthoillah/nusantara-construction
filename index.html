@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <!-- ============================================================
+       NUSANTARA CONSTRUCTION - Website Utama
+       Dibuat dengan HTML5, CSS3, JavaScript
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nusantara Construction - Perusahaan konstruksi terpercaya di Indonesia. Spesialis pembangunan rumah, gedung, renovasi, dan manajemen proyek." />
+  <meta name="keywords" content="konstruksi, bangun rumah, renovasi, kontraktor, arsitek, Indonesia" />
+  <meta property="og:title" content="Nusantara Construction - Membangun Masa Depan Indonesia" />
+  <meta property="og:description" content="Perusahaan konstruksi premium Indonesia dengan pengalaman 15+ tahun." />
+  <title>Nusantara Construction | Membangun Masa Depan Indonesia</title>
+
+  <!-- Google Fonts: Montserrat + Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       LOADING SCREEN
+       ============================================================ -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-logo-icon"><i class="fas fa-building"></i></span>
+        <span class="loader-logo-text">NUSANTARA</span>
+      </div>
+      <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+      <span class="loader-percent" id="loaderPercent">0%</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="#home" class="nav-logo">
+        <div class="logo-icon"><i class="fas fa-building"></i></div>
+        <div class="logo-text">
+          <span class="logo-main">NUSANTARA</span>
+          <span class="logo-sub">CONSTRUCTION</span>
+        </div>
+      </a>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Beranda</a></li>
+        <li><a href="#about" class="nav-link">Tentang</a></li>
+        <li><a href="#services" class="nav-link">Layanan</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#simulator" class="nav-link">Simulasi</a></li>
+        <li><a href="#calculator" class="nav-link">Kalkulator</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimoni</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Kontak</a></li>
+      </ul>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <!-- CTA Button -->
+        <a href="#booking" class="btn-nav-cta">Konsultasi</a>
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       SECTION 1: HOME / HERO
+       ============================================================ -->
+  <section id="home" class="hero-section">
+    <!-- Animated Background Canvas -->
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+
+    <!-- Video Background Overlay -->
+    <div class="hero-video-bg">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="hero-badge" data-aos="fade-down">
+        <i class="fas fa-award"></i> Terpercaya Sejak 2009
+      </div>
+      <h1 class="hero-title" data-aos="fade-up">
+        <span class="title-line">Membangun</span>
+        <span class="title-line gold">Masa Depan</span>
+        <span class="title-line">Indonesia</span>
+      </h1>
+      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+        Solusi konstruksi premium untuk hunian dan komersial. <br />
+        Dari konsep hingga kenyataan — kami wujudkan impian Anda.
+      </p>
+      <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+        <a href="#booking" class="btn-primary">
+          <i class="fas fa-comments"></i> Konsultasi Gratis
+        </a>
+        <a href="#portfolio" class="btn-secondary">
+          <i class="fas fa-images"></i> Lihat Portfolio
+        </a>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </div>
+
+    <!-- Hero Stats -->
+    <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
+      <div class="stat-item">
+        <span class="stat-number" data-count="500">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Proyek Selesai</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="350">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Klien Puas</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="15">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Tahun Pengalaman</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="120">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Tenaga Ahli</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2: TENTANG KAMI
+       ============================================================ -->
+  <section id="about" class="about-section section">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Tentang Kami</span>
+        <h2 class="section-title">Siapa Nusantara <span class="gold">Construction?</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- About Content -->
+      <div class="about-grid">
+        <!-- Left: Text -->
+        <div class="about-text" data-aos="fade-right">
+          <p class="about-lead">
+            Nusantara Construction adalah perusahaan jasa konstruksi dan arsitektur terkemuka di Indonesia, 
+            berdiri sejak <strong>2009</strong> dengan misi membangun hunian dan infrastruktur berkualitas 
+            internasional untuk masyarakat Indonesia.
+          </p>
+          <p>
+            Kami menggabungkan desain inovatif, material premium, dan keahlian teknis tinggi untuk 
+            menghadirkan bangunan yang tidak hanya indah secara estetika, tetapi juga kokoh dan tahan lama.
+          </p>
+
+          <!-- Vision & Mission -->
+          <div class="vm-grid">
+            <div class="vm-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="vm-icon"><i class="fas fa-eye"></i></div>
+              <h4>Visi</h4>
+              <p>Menjadi perusahaan konstruksi paling terpercaya dan inovatif di Asia Tenggara pada 2030.</p>
+            </div>
+            <div class="vm-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
+              <h4>Misi</h4>
+              <p>Menghadirkan solusi konstruksi berkualitas tinggi dengan integritas, inovasi, dan kepuasan klien.</p>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div class="certs" data-aos="fade-up">
+            <span class="cert-badge"><i class="fas fa-certificate"></i> ISO 9001:2015</span>
+            <span class="cert-badge"><i class="fas fa-shield-alt"></i> SNI Certified</span>
+            <span class="cert-badge"><i class="fas fa-award"></i> LPJK Class A</span>
+            <span class="cert-badge"><i class="fas fa-check-circle"></i> Green Building</span>
+          </div>
+        </div>
+
+        <!-- Right: Image & Stats -->
+        <div class="about-visual" data-aos="fade-left">
+          <div class="about-img-wrapper">
+            <div class="about-img-main">
+              <div class="img-placeholder about-img-1">
+                <i class="fas fa-hard-hat"></i>
+                <span>Tim Profesional</span>
+              </div>
+            </div>
+            <div class="about-img-float">
+              <div class="img-placeholder about-img-2">
+                <i class="fas fa-drafting-compass"></i>
+                <span>Desain Presisi</span>
+              </div>
+            </div>
+            <div class="about-badge-float">
+              <span class="badge-number">15+</span>
+              <span class="badge-text">Tahun<br/>Kepercayaan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline-wrapper" data-aos="fade-up">
+        <h3 class="timeline-title">Perjalanan Kami</h3>
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2009</span>
+              <h4>Pendirian Perusahaan</h4>
+              <p>Nusantara Construction didirikan di Jakarta dengan tim 10 orang dan fokus pada renovasi rumah.</p>
+            </div>
+          </div>
+          <div class="timeline-item right" data-aos="fade-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2013</span>
+              <h4>Ekspansi ke Gedung Komersial</h4>
+              <p>Berhasil menyelesaikan 50+ proyek dan mulai merambah pembangunan gedung perkantoran.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2017</span>
+              <h4>Sertifikasi ISO & LPJK A</h4>
+              <p>Meraih sertifikasi internasional ISO 9001 dan naik kelas ke LPJK Grade A.</p>
+            </div>
+          </div>
+          <div class="timeline-item right" data-aos="fade-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="tl-year">2020</span>
+              <h4>Inovasi Green Building</h4>
+              <p>Memperkenalkan konsep bangunan ramah lingkungan dan meraih penghargaan Green Construction Award.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-dot gold-dot"></div>
+            <div class="timeline-content gold-content">
+              <span class="tl-year">2024</span>
+              <h4>500+ Proyek Selesai</h4>
+              <p>Merayakan tonggak 500 proyek dengan tim 120+ tenaga ahli tersertifikasi di seluruh Indonesia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3: LAYANAN
+       ============================================================ -->
+  <section id="services" class="services-section section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Layanan Kami</span>
+        <h2 class="section-title">Solusi Konstruksi <span class="gold">Lengkap</span></h2>
+        <div class="section-line"></div>
+        <p class="section-desc">Dari desain hingga serah terima kunci — kami tangani semua kebutuhan konstruksi Anda.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service Cards -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+          <div class="service-glow"></div>
+          <h3>Desain Arsitektur</h3>
+          <p>Perencanaan dan perancangan arsitektur yang inovatif, fungsional, dan estetis sesuai kebutuhan klien.</p>
+          <div class="service-features">
+            <span><i class="fas fa-check"></i> 2D & 3D Rendering</span>
+            <span><i class="fas fa-check"></i> IMB Ready</span>
+            <span><i class="fas fa-check"></i> Revisi Tak Terbatas</span>
+          </div>
+          <a href="#contact" class="service-btn">Pelajari Lebih <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon"><i class="fas fa-couch"></i></div>
+          <div class="service-glow"></div>
+          <h3>Desain Interior</h3>
+          <p>Transformasi ruangan menjadi karya seni yang nyaman dan mencerminkan kepribadian Anda.</p>
+          <div class="service-features">
+            <span><i class="fas fa-check"></i> Konsultasi Gratis</span>
+            <span><i class="fas fa-check"></i> Material Premium</span>
+            <span><i class="fas fa-check"></i> Furniture Custom</span>
+          </div>
+          <a href="#contact" class="service-btn">Pelajari Lebih <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-badge">Populer</div>
+          <div class="service-icon"><i class="fas fa-home"></i></div>
+          <div class="service-glow"></div>
+          <h3>Pembangunan Rumah</h3>
+          <p>Wujudkan rumah impian Anda dengan standar kualitas internasional dan pengerjaan tepat waktu.</p>
+          <div class="service-features">
+            <span><i class="fas fa-check"></i> Garansi Struktur 10 Tahun</span>
+            <span><i class="fas fa-check"></i> Pengawasan Harian</span>
+            <span><i class="fas fa-check"></i> Progress Report</span>
+          </div>
+          <a href="#contact" class="service-btn">Pelajari Lebih <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon"><i class="fas fa-tools"></i></div>
+          <div class="service-glow"></div>
+          <h3>Renovasi Bangunan</h3>
+          <p>Perbarui dan tingkatkan nilai properti Anda dengan sentuhan modern dan teknologi terkini.</p>
+          <div class="service-features">
+            <span><i class="fas fa-check"></i> Survey Gratis</span>
+            <span><i class="fas fa-check"></i> Harga Transparan</span>
+            <span><i class="fas fa-check"></i> Minim Gangguan</span>
+          </div>
+          <a href="#contact" class="service-btn">Pelajari Lebih <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-icon"><i class="fas fa-city"></i></div>
+          <div class="service-glow"></div>
+          <h3>Pembangunan Gedung</h3>
+          <p>Konstruksi gedung komersial, perkantoran, dan apartemen dengan standar keamanan tertinggi.</p>
+          <div class="service-features">
+            <span><i class="fas fa-check"></i> Analisis Struktur</span>
+            <span><i class="fas fa-check"></i> MEP Engineering</span>
+            <span><i class="fas fa-check"></i> Green Building</span>
+          </div>
+          <a href="#contact" class="service-btn">Pelajari Lebih <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-icon"><i class="fas fa-clipboard-list"></i></div>
+          <div class="service-glow"></div>
+          <h3>Manajemen Proyek</h3>
+          <p>Pengelolaan proyek konstruksi secara profesional — on-time, on-budget, on-quality.</p>
+          <div class="service-features">
+            <span><i class="fas fa-check"></i> Project Manager</span>
+            <span><i class="fas fa-check"></i> Laporan Real-time</span>
+            <span><i class="fas fa-check"></i> Cost Control</span>
+          </div>
+          <a href="#contact" class="service-btn">Pelajari Lebih <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="service-icon"><i class="fas fa-eye"></i></div>
+          <div class="service-glow"></div>
+          <h3>Pengawasan Proyek</h3>
+          <p>Jasa pengawasan independen untuk memastikan proyek Anda berjalan sesuai spesifikasi teknis.</p>
+          <div class="service-features">
+            <span><i class="fas fa-check"></i> Inspektor Bersertifikat</span>
+            <span><i class="fas fa-check"></i> Audit Kualitas</span>
+            <span><i class="fas fa-check"></i> Dokumentasi Lengkap</span>
+          </div>
+          <a href="#contact" class="service-btn">Pelajari Lebih <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4: PORTFOLIO
+       ============================================================ -->
+  <section id="portfolio" class="portfolio-section section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title">Karya <span class="gold">Terbaik</span> Kami</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="portfolio-filters" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="rumah">Rumah</button>
+        <button class="filter-btn" data-filter="gedung">Gedung</button>
+        <button class="filter-btn" data-filter="renovasi">Renovasi</button>
+        <button class="filter-btn" data-filter="interior">Interior</button>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="portfolio-grid" id="portfolioGrid">
+        <!-- Portfolio items generated by JS -->
+      </div>
+    </div>
+
+    <!-- Portfolio Modal -->
+    <div class="portfolio-modal" id="portfolioModal">
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+        <div class="modal-img" id="modalImg"></div>
+        <div class="modal-body">
+          <span class="modal-category" id="modalCategory"></span>
+          <h3 id="modalTitle"></h3>
+          <div class="modal-meta">
+            <span id="modalLocation"><i class="fas fa-map-marker-alt"></i> </span>
+            <span id="modalYear"><i class="fas fa-calendar"></i> </span>
+          </div>
+          <p id="modalDesc"></p>
+          <a href="#booking" class="btn-primary modal-cta" onclick="closeModal()">
+            <i class="fas fa-comments"></i> Konsultasi Proyek Serupa
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5: SIMULASI DESAIN RUMAH
+       ============================================================ -->
+  <section id="simulator" class="simulator-section section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Fitur Canggih</span>
+        <h2 class="section-title">Simulasi <span class="gold">Desain Rumah</span></h2>
+        <div class="section-line"></div>
+        <p class="section-desc">Pilih preferensi Anda dan lihat preview desain rumah impian secara instan.</p>
+      </div>
+
+      <div class="simulator-wrapper" data-aos="fade-up">
+        <!-- Controls -->
+        <div class="sim-controls">
+          <div class="sim-group">
+            <label>Tipe Rumah</label>
+            <div class="sim-options" id="simType">
+              <button class="sim-opt active" data-val="type36">Tipe 36</button>
+              <button class="sim-opt" data-val="type45">Tipe 45</button>
+              <button class="sim-opt" data-val="type72">Tipe 72</button>
+              <button class="sim-opt" data-val="type120">Tipe 120</button>
+            </div>
+          </div>
+          <div class="sim-group">
+            <label>Jumlah Lantai</label>
+            <div class="sim-options" id="simFloor">
+              <button class="sim-opt active" data-val="1">1 Lantai</button>
+              <button class="sim-opt" data-val="2">2 Lantai</button>
+              <button class="sim-opt" data-val="3">3 Lantai</button>
+            </div>
+          </div>
+          <div class="sim-group">
+            <label>Gaya Desain</label>
+            <div class="sim-options" id="simStyle">
+              <button class="sim-opt active" data-val="modern">Modern</button>
+              <button class="sim-opt" data-val="minimalis">Minimalis</button>
+              <button class="sim-opt" data-val="klasik">Klasik</button>
+              <button class="sim-opt" data-val="tropis">Tropis</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preview -->
+        <div class="sim-preview">
+          <div class="sim-canvas" id="simCanvas">
+            <!-- House SVG drawn by JS -->
+          </div>
+          <div class="sim-info" id="simInfo">
+            <h4 id="simTitle">Rumah Modern Tipe 36 — 1 Lantai</h4>
+            <div class="sim-specs" id="simSpecs">
+              <span><i class="fas fa-ruler-combined"></i> <span id="specArea">36 m²</span></span>
+              <span><i class="fas fa-bed"></i> <span id="specBed">2 Kamar Tidur</span></span>
+              <span><i class="fas fa-bath"></i> <span id="specBath">1 Kamar Mandi</span></span>
+              <span><i class="fas fa-car"></i> <span id="specGarage">Tanpa Garasi</span></span>
+            </div>
+            <p id="simDesc">Rumah tipe 36 dengan desain modern yang efisien dan fungsional, cocok untuk keluarga muda.</p>
+            <a href="#booking" class="btn-primary sim-cta">
+              <i class="fas fa-paper-plane"></i> Konsultasikan Desain Ini
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6: KALKULATOR ESTIMASI BIAYA
+       ============================================================ -->
+  <section id="calculator" class="calculator-section section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Tools</span>
+        <h2 class="section-title">Kalkulator <span class="gold">Estimasi Biaya</span></h2>
+        <div class="section-line"></div>
+        <p class="section-desc">Dapatkan perkiraan biaya bangunan secara instan. Gratis, cepat, akurat.</p>
+      </div>
+
+      <div class="calc-wrapper" data-aos="fade-up">
+        <div class="calc-form">
+          <!-- Input: Luas Bangunan -->
+          <div class="calc-group">
+            <label for="calcArea"><i class="fas fa-ruler-combined"></i> Luas Bangunan (m²)</label>
+            <input type="number" id="calcArea" placeholder="Contoh: 100" min="20" max="10000" />
+          </div>
+
+          <!-- Input: Jenis Bangunan -->
+          <div class="calc-group">
+            <label for="calcType"><i class="fas fa-building"></i> Jenis Bangunan</label>
+            <select id="calcType">
+              <option value="rumah_tinggal">Rumah Tinggal</option>
+              <option value="rumah_mewah">Rumah Mewah</option>
+              <option value="ruko">Ruko / Toko</option>
+              <option value="gedung">Gedung Perkantoran</option>
+              <option value="villa">Villa / Resort</option>
+              <option value="gudang">Gudang / Warehouse</option>
+            </select>
+          </div>
+
+          <!-- Input: Kualitas Material -->
+          <div class="calc-group">
+            <label><i class="fas fa-gem"></i> Kualitas Material</label>
+            <div class="calc-quality">
+              <label class="quality-opt">
+                <input type="radio" name="quality" value="ekonomis" />
+                <div class="quality-card">
+                  <i class="fas fa-coins"></i>
+                  <span>Ekonomis</span>
+                  <small>Standar Pasar</small>
+                </div>
+              </label>
+              <label class="quality-opt">
+                <input type="radio" name="quality" value="standar" checked />
+                <div class="quality-card active">
+                  <i class="fas fa-star"></i>
+                  <span>Standar</span>
+                  <small>Paling Populer</small>
+                </div>
+              </label>
+              <label class="quality-opt">
+                <input type="radio" name="quality" value="premium" />
+                <div class="quality-card">
+                  <i class="fas fa-crown"></i>
+                  <span>Premium</span>
+                  <small>Kualitas Terbaik</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Input: Lantai -->
+          <div class="calc-group">
+            <label for="calcFloor"><i class="fas fa-layer-group"></i> Jumlah Lantai</label>
+            <select id="calcFloor">
+              <option value="1">1 Lantai</option>
+              <option value="2">2 Lantai</option>
+              <option value="3">3 Lantai</option>
+              <option value="4">4+ Lantai</option>
+            </select>
+          </div>
+
+          <button class="btn-primary calc-btn" onclick="calculateCost()">
+            <i class="fas fa-calculator"></i> Hitung Estimasi
+          </button>
+        </div>
+
+        <!-- Result -->
+        <div class="calc-result" id="calcResult">
+          <div class="result-header">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <h3>Estimasi Biaya</h3>
+          </div>
+          <div class="result-body">
+            <div class="result-placeholder" id="resultPlaceholder">
+              <i class="fas fa-calculator"></i>
+              <p>Isi form di samping untuk mendapatkan estimasi biaya bangunan Anda.</p>
+            </div>
+            <div class="result-data" id="resultData" style="display:none;">
+              <div class="result-row">
+                <span>Biaya Konstruksi</span>
+                <span id="resCost" class="gold">-</span>
+              </div>
+              <div class="result-row">
+                <span>Biaya Desain (5%)</span>
+                <span id="resDesign">-</span>
+              </div>
+              <div class="result-row">
+                <span>Biaya Pengawasan (3%)</span>
+                <span id="resSupervision">-</span>
+              </div>
+              <div class="result-divider"></div>
+              <div class="result-row total">
+                <span>Total Estimasi</span>
+                <span id="resTotal" class="gold">-</span>
+              </div>
+              <div class="result-row">
+                <span><i class="fas fa-clock"></i> Estimasi Waktu</span>
+                <span id="resTime" class="gold">-</span>
+              </div>
+              <div class="result-note">
+                <i class="fas fa-info-circle"></i>
+                <small>Estimasi ini bersifat indikatif. Harga final bergantung pada kondisi lapangan, spesifikasi detail, dan lokasi proyek.</small>
+              </div>
+              <a href="#booking" class="btn-primary" style="width:100%;text-align:center;margin-top:1rem;">
+                <i class="fas fa-comments"></i> Konsultasi Detail
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 7: BOOKING SURVEY
+       ============================================================ -->
+  <section id="booking" class="booking-section section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Booking</span>
+        <h2 class="section-title">Survey <span class="gold">Lokasi Gratis</span></h2>
+        <div class="section-line"></div>
+        <p class="section-desc">Daftarkan proyek Anda sekarang. Tim kami akan menghubungi dalam 24 jam.</p>
+      </div>
+
+      <div class="booking-wrapper" data-aos="fade-up">
+        <form class="booking-form" id="bookingForm" onsubmit="submitBooking(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fas fa-user"></i> Nama Lengkap *</label>
+              <input type="text" id="bName" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label><i class="fab fa-whatsapp"></i> Nomor WhatsApp *</label>
+              <input type="tel" id="bWa" placeholder="08xx-xxxx-xxxx" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fas fa-envelope"></i> Email</label>
+              <input type="email" id="bEmail" placeholder="email@anda.com" />
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-hard-hat"></i> Jenis Proyek *</label>
+              <select id="bProject" required>
+                <option value="">Pilih Jenis Proyek</option>
+                <option>Bangun Rumah Baru</option>
+                <option>Renovasi Rumah</option>
+                <option>Desain Interior</option>
+                <option>Pembangunan Gedung</option>
+                <option>Manajemen Proyek</option>
+                <option>Lainnya</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label><i class="fas fa-map-marker-alt"></i> Lokasi Proyek *</label>
+            <input type="text" id="bLocation" placeholder="Jl. Contoh No. 1, Kota, Provinsi" required />
+          </div>
+          <div class="form-group full">
+            <label><i class="fas fa-image"></i> Upload Gambar Lokasi</label>
+            <div class="file-upload" id="fileUpload" onclick="document.getElementById('bFile').click()">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <span id="fileLabel">Klik untuk upload gambar (max 5MB)</span>
+              <input type="file" id="bFile" accept="image/*" style="display:none;" onchange="handleFileUpload(this)" />
+            </div>
+          </div>
+          <div class="form-group full">
+            <label><i class="fas fa-comment-alt"></i> Pesan Tambahan</label>
+            <textarea id="bMessage" rows="4" placeholder="Deskripsikan kebutuhan konstruksi Anda secara detail..."></textarea>
+          </div>
+          <div class="form-footer">
+            <button type="submit" class="btn-primary btn-xl">
+              <i class="fas fa-paper-plane"></i> Kirim Booking Survey
+            </button>
+            <p class="form-note"><i class="fas fa-lock"></i> Data Anda aman dan terlindungi</p>
+          </div>
+        </form>
+
+        <!-- Success Message -->
+        <div class="booking-success" id="bookingSuccess" style="display:none;">
+          <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+          <h3>Booking Berhasil!</h3>
+          <p>Terima kasih, <span id="successName"></span>! Tim kami akan menghubungi Anda melalui WhatsApp dalam <strong>24 jam</strong>.</p>
+          <a href="#home" class="btn-secondary">Kembali ke Beranda</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 8: TESTIMONI
+       ============================================================ -->
+  <section id="testimonials" class="testimonials-section section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Testimoni</span>
+        <h2 class="section-title">Kata <span class="gold">Klien Kami</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="testimonials-slider" data-aos="fade-up">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <!-- Generated by JS -->
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn prev" id="sliderPrev"><i class="fas fa-chevron-left"></i></button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn next" id="sliderNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 9: BLOG
+       ============================================================ -->
+  <section id="blog" class="blog-section section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Blog & Insight</span>
+        <h2 class="section-title">Artikel <span class="gold">Konstruksi</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="blog-grid" id="blogGrid">
+        <!-- Generated by JS -->
+      </div>
+
+      <div class="blog-cta" data-aos="fade-up">
+        <a href="#" class="btn-secondary">Lihat Semua Artikel <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 10: KONTAK
+       ============================================================ -->
+  <section id="contact" class="contact-section section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Kontak</span>
+        <h2 class="section-title">Hubungi <span class="gold">Kami</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Kantor Pusat</h4>
+              <p>Jl. Sudirman Kav. 52-53, Jakarta Selatan 12190</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/6281234567890" target="_blank">+62 812-3456-7890</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:info@nusantaraconstruction.id">info@nusantaraconstruction.id</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4>Jam Operasional</h4>
+              <p>Senin – Jumat: 08.00 – 17.00 WIB<br/>Sabtu: 08.00 – 13.00 WIB</p>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="social-links">
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper" data-aos="fade-left">
+          <form class="contact-form" id="contactForm" onsubmit="submitContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" placeholder="Nama Lengkap" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email" required />
+              </div>
+            </div>
+            <div class="form-group full">
+              <input type="text" placeholder="Subjek" required />
+            </div>
+            <div class="form-group full">
+              <textarea rows="5" placeholder="Pesan Anda..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-paper-plane"></i> Kirim Pesan
+            </button>
+          </form>
+        </div>
+
+        <!-- Map -->
+        <div class="contact-map" data-aos="fade-up">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2878068537!2d106.82100767499066!3d-6.208578993772408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e4a4e4e4e5%3A0x0!2sJl.%20Jend.%20Sudirman%2C%20Jakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+            width="100%" height="300" style="border:0;border-radius:12px;" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Peta Lokasi Nusantara Construction">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo footer-logo">
+            <div class="logo-icon"><i class="fas fa-building"></i></div>
+            <div class="logo-text">
+              <span class="logo-main">NUSANTARA</span>
+              <span class="logo-sub">CONSTRUCTION</span>
+            </div>
+          </a>
+          <p>Membangun masa depan Indonesia dengan standar kualitas internasional dan integritas terpercaya.</p>
+          <div class="footer-certs">
+            <span>ISO 9001</span><span>LPJK A</span><span>SNI</span>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="#services">Desain Arsitektur</a></li>
+            <li><a href="#services">Desain Interior</a></li>
+            <li><a href="#services">Bangun Rumah</a></li>
+            <li><a href="#services">Renovasi</a></li>
+            <li><a href="#services">Bangun Gedung</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Kontak</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Jakarta Selatan</li>
+            <li><i class="fab fa-whatsapp"></i> +62 812-3456-7890</li>
+            <li><i class="fas fa-envelope"></i> info@nusantara.id</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Nusantara Construction. Hak Cipta Dilindungi.</p>
+        <p>Dibangun dengan <i class="fas fa-heart" style="color:#c9a227"></i> di Indonesia</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       FLOATING BUTTONS
+       ============================================================ -->
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/6281234567890?text=Halo%20Nusantara%20Construction,%20saya%20ingin%20konsultasi%20proyek"
+     class="wa-float" id="waFloat" target="_blank" title="Chat WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-pulse"></span>
+  </a>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" title="Kembali ke atas">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
